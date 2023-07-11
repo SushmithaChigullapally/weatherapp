@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .description {
+    margin-bottom: 0.5rem;
+  }
+  
+  .highlight {
+    color: #ff7f50; /* Orange color */
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+  }
+  

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/835370890/photo/sunset-sunrise-with-clouds-light-rays-and-other-atmospheric-effect.jpg?s=612x612&w=0&k=20&c=zGDOBYVFY74wX2gUgkonYGtNl1zenev5mPotAqUlJbM=');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        /* Style the prediction result box */
+        .prediction-box {
+            background-color: transparent;
+      border: none;
+      display: flex;
+      flex-direction: column;
+    align-items: center;
+    justify-content: center;
+      box-shadow: 0 0 10px 5px rgba(111, 104, 104, 0.3);
+      width: 700px;
+      height: 500px;
+        }
+        .fileInput {
+    padding: 10px;
+    font-size: 20px;
+    /* Additional styles if needed */
+}
+
+.Output {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgb(34, 34, 112);
+    color: white;
+}
+#uploaded-image {
+        display: none;
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">WEATHER APP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="http://192.168.43.166:3000">Home</a>
+                    <a class="nav-link" href="http://192.168.43.166:3000/Api.js">Weather-API</a>
+                    <a class="nav-link" href="http://127.0.0.1:5000/">Image Processing</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="prediction-box">
+    <form method="POST" action="/predict" enctype="multipart/form-data" class="mt-5">
+        <input type="file" name="image" class="fileInput" onchange="previewImage(event)">
+
+        <input type="submit" value="Predict" class="Output">
+    </form>
+
+    {% if prediction %}
+    <div style="padding-top:10px;">
+        <h2>Prediction Result:</h2>
+        <p>{{ prediction }}</p>
+    </div>
+    {% endif %}
+    <img id="uploaded-image" src="#" alt="Uploaded Image">
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+    
+            reader.onload = function(event) {
+                const uploadedImage = document.getElementById('uploaded-image');
+                uploadedImage.src = event.target.result;
+                uploadedImage.style.display = 'block';
+            };
+    
+            reader.readAsDataURL(file);
+        }
+    </script>
+    
+</body>
+
+</html>

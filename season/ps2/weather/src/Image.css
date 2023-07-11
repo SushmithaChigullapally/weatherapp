@@ -1,0 +1,56 @@
+.App {
+    background-image: url('https://media.istockphoto.com/id/835370890/photo/sunset-sunrise-with-clouds-light-rays-and-other-atmospheric-effect.jpg?s=612x612&w=0&k=20&c=zGDOBYVFY74wX2gUgkonYGtNl1zenev5mPotAqUlJbM=');
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh;
+  }
+
+  .image-uploader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-preview {
+    margin-bottom: 20px;
+  }
+  
+  .preview-image {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  
+  .no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    border: 2px dashed #ccc;
+  }
+  
+  .upload-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .prediction-result {
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,47 @@
+.weatherBg {
+    background-image: url('https://media.istockphoto.com/id/835370890/photo/sunset-sunrise-with-clouds-light-rays-and-other-atmospheric-effect.jpg?s=612x612&w=0&k=20&c=zGDOBYVFY74wX2gUgkonYGtNl1zenev5mPotAqUlJbM=');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .weatherBg h1 {
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .weatherBg input {
+    margin-bottom: 10px;
+    width: 200px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+  }
+  .weatherResultBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+  }
+  
+  .weatherIcon {
+    margin-top: 2rem;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .weatherCity {
+    font-size: 35px;
+  }
+  
+  .weatherTemp {
+    font-size: 45px;
+  }
+  
+  
